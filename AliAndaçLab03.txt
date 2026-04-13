@@ -1,0 +1,136 @@
+import java.util.Scanner;
+
+class Insan{
+        public String ad,soyad,sacRengi,gozRengi;
+        public int yas;
+        public double boy,kilo;
+        
+
+        public Insan(){
+            
+        }
+
+        public Insan(String ad,String soyad){
+        this.ad = ad;
+        this.soyad = soyad;
+
+        }
+
+
+        public Insan(String ad, String soyad, String sacRengi, String gozRengi, int yas, double kilo, double boy) {
+        this.ad = ad;
+        this.soyad = soyad;
+        this.sacRengi = sacRengi;
+        this.gozRengi = gozRengi;
+        this.yas = yas;
+        this.kilo = kilo;
+        this.boy = boy;
+    }
+
+    public void adYaz() {
+        System.out.println("Ad Soyad: " + ad);
+    }
+     public void soyadYaz() {
+        System.out.println("Soyad: " + soyad);
+    }
+    public void gozRengiYaz() {
+        System.out.println("Göz Rengi: " + gozRengi);
+    }
+
+    public void sacRengiYaz() {
+        System.out.println("Saç Rengi: " + sacRengi);
+    }
+
+    public void yasYaz() {
+        System.out.println("Yaş: " + yas);
+    }
+
+    public void kiloYaz() {
+        System.out.println("Kilo: " + kilo + " kg");
+    }
+
+    public void boyYaz() {
+        System.out.println("Boy: " + boy + " m");
+    }
+
+}
+
+public class Test{
+    static Scanner keyboard = new Scanner(System.in);
+
+    public static void insanOlusturun(int insanSayisi) {
+    Insan[] insanlarDizi = new Insan[insanSayisi];
+        for(int i =0;i<insanSayisi;i++){
+            System.out.println((i + 1) + ". İnsanın bilgilerini girin:");
+            
+            System.out.print("Ad: ");
+            String gelenAd = keyboard.nextLine();
+            
+            System.out.print("Soyad: ");
+            String gelenSoyad = keyboard.nextLine();
+            
+            System.out.print("Saç Rengi: ");
+            String gelenSac = keyboard.nextLine();
+            
+            System.out.print("Göz Rengi: ");
+            String gelenGoz = keyboard.nextLine();
+            
+            System.out.print("Yaş: ");
+            int gelenYas = keyboard.nextInt();
+            
+            System.out.print("Kilo : ");
+            double gelenKilo = keyboard.nextDouble();
+            
+            System.out.print("Boy : ");
+            double gelenBoy = keyboard.nextDouble();
+
+            Insan yeniInsan = new Insan(gelenAd, gelenSoyad, gelenSac, gelenGoz, gelenYas, gelenKilo, gelenBoy);
+            
+
+            insanlarDizi[i] = yeniInsan;
+            
+            insanlarDizi[i].adYaz();
+            insanlarDizi[i].boyYaz();
+            insanlarDizi[i].gozRengiYaz();
+        }
+        keyboard.close();
+}
+
+        public static void main(String[] args){
+            insanOlusturun(1);
+
+
+            Insan insan1 = new Insan();
+            insan1.ad = "Ali Andaç";
+            insan1.soyad ="Erdaş";
+            insan1.gozRengi = "Ela";
+            insan1.sacRengi = "Siyah" ;
+            insan1.kilo = 83.6;
+            insan1.boy = 182.8;
+            insan1.yas = 20;
+
+            Insan insan2 = new Insan("Ayberk", "Kar");
+            insan2.boy=182.2;
+            insan2.kilo = 55;
+            insan2.sacRengi = "Kahverengi";
+            insan2.yas=19;
+            insan2.gozRengi="Ela";
+
+            Insan insan3 = new Insan("İsmail Emre", "Türkbay","Kahverengi","Kahverengi",20,84,182.5);
+            Insan insan4 = new Insan("Elif Sude","Kapan","Siyah","Siyah",18,55,160);
+            Insan insan5 = new Insan("Gizem","Öksuz","Kahverengi","Mor",19,45,162);
+
+            insan1.adYaz();
+            insan1.boyYaz();
+
+            insan2.gozRengiYaz();
+            insan2.sacRengiYaz();
+
+            insan3.kiloYaz();
+            insan3.soyadYaz();
+            
+        
+        }
+    
+}
+    
