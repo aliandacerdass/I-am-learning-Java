@@ -19,6 +19,7 @@ public class Main {
         System.out.println(hesap1);
         System.out.println(hesap2);
         System.out.println(hesap3);
+        System.out.println(hesap1);
 
         keyboard.close();
     }
